@@ -1,0 +1,10 @@
+/target
+.kaptaind/
+.context/
+*.log
+.env
+.fract-*.json
+.verify-*.json
+.verify-*.md
+.brandi/
+.uni/

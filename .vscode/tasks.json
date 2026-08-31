@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "form3: test",
+            "type": "shell",
+            "command": "cargo test --features agent,cjk",
+            "group": "test",
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "form3: lint",
+            "type": "shell",
+            "command": "cargo clippy --features agent,cjk -- -D warnings",
+            "group": "build",
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "form3: run agent",
+            "type": "shell",
+            "command": "cargo run --bin 3form-agent --features agent",
+            "group": "none"
+        },
+        {
+            "label": "form3: deliver",
+            "type": "shell",
+            "command": "deliver --spec deliver.toml --strict",
+            "group": "none"
+        }
+    ]
+}

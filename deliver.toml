@@ -1,0 +1,8 @@
+checks = [
+    { kind = "file", path = "Cargo.toml" },
+    { kind = "file", path = "src/lib.rs" },
+    { kind = "file", path = "README.md" },
+    { kind = "command", command = "cargo test --features agent,cjk" },
+    { kind = "command", command = "cargo clippy --features agent,cjk -- -D warnings" },
+    { kind = "command", command = "grep -R -E 'TODO|FIXME|unimplemented|todo!|placeholder|stub|noop|no-op' src/ansi.rs src/anim.rs src/compat.rs src/table.rs src/term.rs src/width.rs src/agent.rs src/bin/ examples/ || true", expect = "empty" },
+]

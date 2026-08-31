@@ -1,0 +1,33 @@
+{
+    "form3 styled text": {
+        "prefix": "f3style",
+        "body": [
+            "use form3::compat::Colorize;",
+            "let text = \"${1:hello}\".${2:red}().${3:bold}().to_string();"
+        ],
+        "description": "Create a styled string with form3"
+    },
+    "form3 table": {
+        "prefix": "f3table",
+        "body": [
+            "use form3::table::{Table, Cell, TableStyle};",
+            "let mut table = Table::new();",
+            "table.set_style(TableStyle::Rounded);",
+            "table.set_header(vec![Cell::new(\"${1:Name}\"), Cell::new(\"${2:Value}\")]);",
+            "table.add_row(vec![Cell::new(\"${3:row1}\"), Cell::new(\"${4:1}\")]);",
+            "println!(\"{}\", table);"
+        ],
+        "description": "Create a form3 table"
+    },
+    "form3 spinner": {
+        "prefix": "f3spinner",
+        "body": [
+            "use form3::anim::{Spinner, BRAILLE};",
+            "let spinner = Spinner::new(&BRAILLE);",
+            "for tick in 0..10 {",
+            "    print!(\"\\r{}\", spinner.frame(tick));",
+            "}"
+        ],
+        "description": "Create a form3 spinner loop"
+    }
+}
